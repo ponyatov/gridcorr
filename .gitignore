@@ -1,0 +1,11 @@
+*~
+*.swp
+*.log
+/docs/
+bin/python*
+bin/pip*
+bin/?ctivate*
+lib/python*
+lib64
+include
+!.gitignore
