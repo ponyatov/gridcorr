@@ -2,7 +2,11 @@ PY  = bin/python3
 PIP = bin/pip3
 
 .PHONY: all
-all: install
+all:
+
+.PHONY: lab
+lab:
+	bin/jupyter $@
 
 .PHONY: format
 format: tmp/format_py
