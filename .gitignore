@@ -6,6 +6,5 @@ lib/python*
 lib64
 include
 share
-!.gitignore
 k3d/static/k3d/
 !.gitignore
