@@ -1,0 +1,12 @@
+.git/**
+bin/**
+tmp/**
+ref/**
+fw/**
+lib/python**
+lib64
+include
+rc
+*~
+*.swp
+*.log
