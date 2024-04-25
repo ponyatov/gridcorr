@@ -1,3 +1,7 @@
 #!meta
 
 {"kernelInfo":{"defaultKernelName":"fsharp","items":[{"aliases":[],"languageName":"fsharp","name":"fsharp"}]}}
+
+#!fsharp
+
+#r "utils.fs"
