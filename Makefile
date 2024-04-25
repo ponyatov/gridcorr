@@ -50,7 +50,8 @@ tmp/format_f: $(F)
 .PHONY: install update ref gz
 install: $(NET_APT) gz
 	$(MAKE) update
-	$(DOTNET) tool install -g fantomas
+# $(DOTNET) new  tool-manifest
+# $(DOTNET) tool install fantomas
 update:
 	sudo apt update
 	sudo apt install -uy `cat apt.txt`
