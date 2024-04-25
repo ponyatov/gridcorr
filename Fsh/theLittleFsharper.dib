@@ -5,3 +5,36 @@
 #!markdown
 
 https://github.com/bmitc/the-little-fsharper
+
+#!fsharp
+
+#load "utils.fs"
+
+#!fsharp
+
+let hello = "Hello World"
+hello
+
+#!fsharp
+
+#r "nuget:System.Data.SQLite"
+
+#!fsharp
+
+open System;
+open System.Data.SQLite;
+
+#!fsharp
+
+type Data = {
+    Symbol:string
+    TS: DateTime
+    Price: Decimal
+}
+
+#!fsharp
+
+let cource = [
+    { Data.Symbol = "USD"; Data.TS = DateTime.Now; Price = Decimal(12.34)}
+]
+cource
