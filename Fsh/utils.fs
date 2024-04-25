@@ -16,6 +16,8 @@ module utils
 //     | Point2D
 //     | Point3D
 
-type Point = float * float * float
+type Point = float32 * float32 * float32
 
 type Line = Point * Point
+
+type Poly = List<Point>
