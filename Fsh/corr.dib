@@ -13,6 +13,9 @@ open utils
 
 #!fsharp
 
-let a:Point = (1.2,3.4,5.6)
-let b:Point = (2.1,4.3,6.5)
-let g0:Line = (a,b)
+let a:Point = (0f,0f,0f)
+let b:Point = (2f,0f,0f)
+let c:Point = (2f,1f,0f)
+let d:Point = (0f,1f,0f)
+let board:Poly = [a;b;c;d]
+board
