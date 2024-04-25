@@ -4,6 +4,7 @@
 
 #!csharp
 
+#r "nuget: Plotly.NET"
 #r "nuget: Plotly.NET.Interactive"
 
 #!fsharp
@@ -18,4 +19,3 @@ let b:Point = (2f,0f,0f)
 let c:Point = (2f,1f,0f)
 let d:Point = (0f,1f,0f)
 let board:Poly = [a;b;c;d]
-board
