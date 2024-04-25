@@ -1,8 +1,8 @@
 #!meta
 
-{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"name":"csharp"},{"aliases":[],"languageName":"fsharp","name":"fsharp"}]}}
+{"kernelInfo":{"defaultKernelName":"fsharp","items":[{"aliases":[],"name":"csharp"},{"aliases":[],"languageName":"fsharp","name":"fsharp"}]}}
 
-#!csharp
+#!fsharp
 
 #r "nuget: Plotly.NET"
 #r "nuget: Plotly.NET.Interactive"
@@ -19,3 +19,20 @@ let b:Point = (2f,0f,0f)
 let c:Point = (2f,1f,0f)
 let d:Point = (0f,1f,0f)
 let board:Poly = [a;b;c;d]
+
+#!markdown
+
+## plot
+
+https://plotly.net/
+
+#!fsharp
+
+open Plotly.NET
+
+#!fsharp
+
+Chart.Line3D(board @ [board.[0]])
+|> Chart.withTitle "PCB"
+|> Chart.withXAxisStyle "inch"
+|> Chart.withYAxisStyle "inch"
