@@ -1,3 +1,6 @@
+# var
+MODULE  = $(notdir $(CURDIR))
+
 # version
 NET_VER    = 8.0.200
 DEBIAN_VER = 12
@@ -22,10 +25,16 @@ NET_APT = /etc/apt/sources.list.d/microsoft-prod.list
 F += $(wildcard Fsh/*.f*)
 
 # all
-.PHONY: all
+.PHONY: all cli
+all: $(MODULE).fsproj $(F)
+	$(DOTNET) run $< /t:$(MODULE)
+
 FLD = $(addprefix --load:, $(F))
-all: $(DOTNET) $(F)
+cli: $(DOTNET) $(F)
 	$(DOTNET) fsi --consolecolors+ $(FLD)
+
+bin/Debug/net8.0/$(MODULE): $(MODULE).fsproj $(F)
+	dotnet build $< /t:$(MODULE)
 
 .PHONY: lab
 lab:

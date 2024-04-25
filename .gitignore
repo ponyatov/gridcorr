@@ -7,4 +7,5 @@ lib64
 include
 share
 k3d/static/k3d/
+obj/
 !.gitignore

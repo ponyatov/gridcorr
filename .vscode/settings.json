@@ -19,6 +19,10 @@
         "lib64/**": true,
         "share/**": true,
         "k3d/**": true,
+        "bin/Debug/**": true,
+        "bin/*python*": true, "bin/*pip*": true,
+        "bin/*jupyter*": true,
+        "obj/**": true,
     },
     "files.watcherExclude": {
         "docs/**": true,
