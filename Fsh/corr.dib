@@ -1,18 +1,15 @@
 #!meta
 
-{"kernelInfo":{"defaultKernelName":"fsharp","items":[{"aliases":[],"languageName":"fsharp","name":"fsharp"}]}}
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"name":"csharp"},{"aliases":[],"languageName":"fsharp","name":"fsharp"}]}}
+
+#!csharp
+
+#r "nuget: Plotly.NET.Interactive"
 
 #!fsharp
 
 #load "utils.fs"
-
-#!fsharp
-
-type Point = float * float * float
-
-#!fsharp
-
-type Line = Point * Point
+open utils
 
 #!fsharp
 
