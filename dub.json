@@ -1,0 +1,13 @@
+{
+	"name": "gridcorr",
+	"description": "grid-based geometric correction for g-code",
+	"authors": ["Dmitry Ponyatov <dponyatov@gmail.com>"],
+	"copyright": "Copyright © 2024, Dmitry Ponyatov <dponyatov@gmail.com>",
+	"license": "MIT",
+    "sourcePaths": ["src"],
+    "targetPath": "bin",
+    "targetType": "executable",    
+    "dependencies": {
+
+    }
+}

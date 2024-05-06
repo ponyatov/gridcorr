@@ -23,8 +23,15 @@ NET_APT = /etc/apt/sources.list.d/microsoft-prod.list
 
 # src
 F += $(wildcard Fsh/*.f*)
+D += $(wildcard src/*.d*)
+G ?= pcb/1x2in/grb/1x2in.nc
 
 # all
+
+.PHONY: d
+d: $(D) dub.json $(G)
+	dub run -- $(G)
+
 .PHONY: all cli
 all: $(MODULE).fsproj $(F)
 	$(DOTNET) run $< /t:$(MODULE)
@@ -52,6 +59,7 @@ install: gz
 	$(MAKE) update
 # $(DOTNET) new  tool-manifest
 # $(DOTNET) tool install fantomas
+# dotnet tool install -v d --global Microsoft.dotnet-interactive
 update:
 	sudo apt update
 	sudo apt install -uy `cat apt.txt`
