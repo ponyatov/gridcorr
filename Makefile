@@ -80,7 +80,7 @@ tmp/format_d: $(D)
 # 	$(BLD) && touch $@
 
 bin/$(MODULE): $(C) $(CP) $(H) $(HP) Makefile
-	$(CXX) $(CFLAGS) -o $@ $(C)
+	$(CXX) $(CFLAGS) -o $@ $(C) $(CP) $(L)
 
 tmp/$(MODULE).lexer.cpp tmp/$(MODULE).lexer.hpp: src/$(MODULE).lex
 	flex -o $@ $<
