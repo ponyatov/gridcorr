@@ -8,6 +8,6 @@
     "targetPath": "bin",
     "targetType": "executable",
     "dependencies": {
-
+        "pegged": "~>0.4.9",
     }
 }
