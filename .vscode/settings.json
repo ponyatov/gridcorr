@@ -45,4 +45,13 @@
     "clang-format.executable":    "clang-format",
     "clang-format.fallbackStyle": "Google",
     "clang-format.style":         "file",
+
+    // D
+    "dscanner.ignoredKeys": [
+        "dscanner.style.phobos_naming_convention",
+        "dscanner.style.long_line"
+    ],
+    "d.dubPath":     "/usr/bin/dub",
+    "d.dmdPath":     "/usr/bin/dmd",
+    "d.dubCompiler": "/usr/bin/dub"
 }

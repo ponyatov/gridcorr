@@ -16,5 +16,9 @@
         // F#
         "ionide.ionide-fsharp",
         "ms-dotnettools.dotnet-interactive-vscode",
+        // D
+        "webfreak.code-d",
+        "webfreak.dlang-bundle",
+        "webfreak.debug",
     ]
 }

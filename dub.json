@@ -6,7 +6,7 @@
 	"license": "MIT",
     "sourcePaths": ["src"],
     "targetPath": "bin",
-    "targetType": "executable",    
+    "targetType": "executable",
     "dependencies": {
 
     }
