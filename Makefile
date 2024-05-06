@@ -47,8 +47,8 @@ tmp/format_py: $(Y)
 tmp/format_f: $(F)
 	$(DOTNET) fantomas --force $? && touch $@
 
-.PHONY: install update ref gz
-install: $(NET_APT) gz
+.PHONY: install update gz ref
+install: gz
 	$(MAKE) update
 # $(DOTNET) new  tool-manifest
 # $(DOTNET) tool install fantomas
@@ -57,8 +57,8 @@ update:
 	sudo apt install -uy `cat apt.txt`
 	$(MAKE) $(PIP)
 	$(PIP) install -U -r requirements.txt
+gz:  $(NET_APT)
 ref:
-gz: $(NET_APT)
 
 $(PY) $(PIP):
 	python3 -m venv .
