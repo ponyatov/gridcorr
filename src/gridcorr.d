@@ -22,14 +22,14 @@ import pegged.grammar;
 
 mixin(grammar("
 gcode:
-    syntax < perc ( comment | m3 | m | ss | gnn | g | x | y | z | f )* perc eoi
+    syntax < perc ( comment | m3 | m | gnn | g | x | y | z | f )* perc eoi
     perc    <~ '%' :eol
     comment <~ '(' (!')' .)* ')' :eol
     gnn     <  (~('G' ('17'|'21'|'40'|'80'|'90'|'54')) | :ws+ | :eol )+
-    m       <~ 'M' n
-    m3      <~ 'M03' ws? ss :eol
+    m3      <  'M03' ss
     ss      <~ 'S' n
-    g       <- ~('G' n) :ws? f? :ws? x? :ws? y? :ws? z?
+    m       <~ 'M' n
+    g       <  ~('G' n) :ws? f? :ws? x? :ws? y? :ws? z?
     x       <~ 'X' d
     y       <~ 'Y' d
     z       <~ 'Z' d
