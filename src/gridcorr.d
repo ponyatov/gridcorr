@@ -20,37 +20,14 @@ void arg(size_t argc, string argv) {
 
 import pegged.grammar;
 
-ParseTree a_nl(ParseTree p) @trusted {
-    if (p.matches.length >= 1)
-        nc.writeln(p.matches[0]);
-    return p;
-}
-
-ParseTree a_g(ParseTree p) @trusted {
-    if (p.matches.length == 2)
-        nc.write(p.matches[0], p.matches[1], ' ');
-    return p;
-}
-
-ParseTree perc_(ParseTree p) @trusted {
-    // if (p.matches.length > 1)
-        nc.writeln(p.matches);
-    return p;
-}
-
-ParseTree comment_(ParseTree p) @trusted {
-    if (p.matches.length > 1)
-        nc.writeln(p.matches.join);
-    return p;
-}
-
 mixin(grammar("
 gcode:
-    syntax < ( perc | comment | m3 | m | ss | g | x | y | z | f | any )*
-    perc    <~ '%' {perc_} :nl
-    comment <{comment_} '(' (!')' .)* ')' :nl
+    syntax < perc ( comment | m3 | m | ss | gnn | g | x | y | z | f )* perc eoi
+    perc    <~ '%' :eol
+    comment <~ '(' (!')' .)* ')' :eol
+    gnn     <  (~('G' ('17'|'21'|'40'|'80'|'90'|'54')) | :ws+ | :eol )+
     m       <~ 'M' n
-    m3      <~ 'M03' ws? ss :nl
+    m3      <~ 'M03' ws? ss :eol
     ss      <~ 'S' n
     g       <- ~('G' n) :ws? f? :ws? x? :ws? y? :ws? z?
     x       <~ 'X' d
@@ -62,5 +39,4 @@ gcode:
     n       <~ [0-9]+
     any     <- .
     ws      <~ [ \t]
-    nl      <~ endOfLine
 "));
