@@ -19,6 +19,10 @@
         "lib64/**": true,
         "share/**": true,
         "k3d/**": true,
+        "bin/Debug/**": true,
+        "bin/*python*": true, "bin/*pip*": true,
+        "bin/*jupyter*": true,
+        "obj/**": true,
     },
     "files.watcherExclude": {
         "docs/**": true,
@@ -41,4 +45,14 @@
     "clang-format.executable":    "clang-format",
     "clang-format.fallbackStyle": "Google",
     "clang-format.style":         "file",
+
+    // D
+    "dscanner.ignoredKeys": [
+        "dscanner.style.phobos_naming_convention",
+        "dscanner.style.long_line"
+    ],
+    "d.dubPath":     "/usr/bin/dub",
+    "d.dmdPath":     "/usr/bin/dmd",
+    "d.dubCompiler": "/usr/bin/dub",
+    "FSharp.suggestGitignore": false
 }

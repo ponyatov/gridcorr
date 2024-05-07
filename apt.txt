@@ -3,3 +3,4 @@ code clang-format
 python3 python3-venv
 npm
 libglfw3
+dotnet-sdk-8.0
