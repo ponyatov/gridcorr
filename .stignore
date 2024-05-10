@@ -10,3 +10,4 @@ rc
 *~
 *.swp
 *.log
+obj/**

@@ -53,6 +53,5 @@
     ],
     "d.dubPath":     "/usr/bin/dub",
     "d.dmdPath":     "/usr/bin/dmd",
-    "d.dubCompiler": "/usr/bin/dub",
-    "FSharp.suggestGitignore": false
+    "d.dubCompiler": "/usr/bin/dub"
 }
