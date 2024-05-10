@@ -2,3 +2,4 @@ jupyterlab
 numpy
 k3d
 glfw
+ply
