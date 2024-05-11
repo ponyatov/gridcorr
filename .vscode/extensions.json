@@ -13,9 +13,6 @@
         // Python
         "ms-python.python",
         "ms-python.autopep8",
-        // F#
-        "ionide.ionide-fsharp",
-        "ms-dotnettools.dotnet-interactive-vscode",
         // D
         "webfreak.code-d",
         "webfreak.dlang-bundle",

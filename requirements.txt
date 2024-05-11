@@ -3,3 +3,6 @@ numpy
 k3d
 glfw
 ply
+jupyterlab-code-formatter
+black
+isort
