@@ -1,5 +1,6 @@
 # var
 MODULE  = $(notdir $(CURDIR))
+PEPS    = E26,E302,E305,E401,E402,E701,E702
 
 # version
 D_VER      = 2.108.0
@@ -17,19 +18,20 @@ CURL   = curl -L -o
 CF     = clang-format -style=file
 PY     = bin/python3
 PIP    = bin/pip3
+PEP    = autopep8
 DC     = /usr/bin/dmd
 DUB    = /usr/bin/dub
 RUN    = $(DUB) run   --compiler=$(DC)
 BLD    = $(DUB) build --compiler=$(DC)
 
 # src
-C += $(wildcard src/*.cpp)
-H += $(wildcard inc/*.hpp)
+C  += $(wildcard src/*.cpp)
+H  += $(wildcard inc/*.hpp)
 CP += tmp/$(MODULE).lexer.cpp tmp/$(MODULE).parser.cpp
 HP += tmp/$(MODULE).lexer.hpp tmp/$(MODULE).parser.hpp
 
-F += $(wildcard Fsh/*.f*)
-# D += $(wildcard src/*.d*)
+Y += $(wildcard lib/*.py)
+D += $(wildcard src/*.d*)
 G ?= pcb/1x2in/grb/1x2in.nc
 
 # cfg
@@ -48,10 +50,11 @@ lab:
 .PHONY: format
 format: tmp/format_py tmp/format_c tmp/format_d
 tmp/format_py: $(Y)
-tmp/format_f: $(F)
-	$(DOTNET) fantomas --force $? && touch $@
+	$(PEP) --ignore $(PEPS) -i $? && touch $@
 tmp/format_c: $(C) $(H)
 	$(CF) -i $? && touch $@
+tmp/format_d: $(D)
+	$(RUN) dfmt -- -i $? && touch $@
 
 # rule
 # bin/$(MODULE): $(D) dub.json Makefile
