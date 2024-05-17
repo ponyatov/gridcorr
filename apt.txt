@@ -3,3 +3,4 @@ code clang-format
 python3 python3-venv python3-autopep8
 npm
 libglfw3
+wxmaxima
