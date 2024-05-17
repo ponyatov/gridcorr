@@ -6,4 +6,3 @@ ply
 jupyterlab-code-formatter
 black
 isort
-maxima_interface
