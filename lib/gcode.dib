@@ -1,8 +1,0 @@
-#!meta
-
-{"kernelInfo":{"defaultKernelName":"fsharp","items":[{"aliases":[],"languageName":"fsharp","name":"fsharp"}]}}
-
-#!fsharp
-
-open System
-open System.IO
